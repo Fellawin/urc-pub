@@ -250,23 +250,13 @@
     ></script>
 
     <main class="fw-main-wrapper 
-    page-login 
-    bg-login-background 
-    max-sm:!flex 
-    max-sm:!flex-col 
-    min-[1600px]:!min-h-[56.25vw] 
-    max-[1599px]:!min-h-[48.112vw] 
-    max-[1100px]:!min-h-[133vw] 
-    max-[900px]:!min-h-[144vw] 
-    max-sm:!min-h-[216vw]
-    relative 
-    max-sm:!h-auto" id="fw-main-content">
+    page-login bg-login-background max-sm:!flex max-sm:!flex-col min-[1600px]:!min-h-[56.25vw] max-[1599px]:!min-h-[48.112vw] max-[1100px]:!min-h-[133vw] max-[900px]:!min-h-[144vw] max-sm:!min-h-[216vw]relative max-sm:!h-auto" id="fw-main-content">
         <!-- Background overlay -->
         <img src="https://i.imgur.com/qbFK115.png" class="absolute top-0 left-0 pointer-events-none w-full" alt="">
         <!-- Left top overlay -->
         <img src="https://i.imgur.com/eEB26la.png" class="absolute top-0 left-0 min-[1600px]:w-[75.208vw] max-[1599px]:w-[94.01042vw] pointer-events-none" alt="">
         <!-- Bottom Overlay -->
-        <img src="https://i.imgur.com/ikJKDug.png" class="absolute min-[1600px]:top-[39.167vw] min-[1600px]:left-[22.65625vw] max-[1599px]:right-0 max-[1599px]:bottom-0 min-[1600px]:w-[77.34375vw] max-[1599px]:w-[79.427vw] w-[1220px] pointer-events-none" alt="">
+        <img src="https://i.imgur.com/ikJKDug.png" class="absolute min-[1600px]:top-[39.167vw] min-[1600px]:left-[22.65625vw] max-[1599px]:right-0 max-[1599px]:bottom-0 min-[1600px]:w-[77.34375vw] max-[1599px]:w-[79.427vw] max-[1100px]:w-[1220px] pointer-events-none" alt="">
         <!-- Laptop -->
         <img src="https://i.imgur.com/t2mevHP.png" class="absolute top-0 right-0 min-[1600px]:w-[50.7291vw] max-[1599px]:w-[27.66vw] w-[425px] pointer-events-none transition ease-in-out duration-300 max-md:w-[250px] max-sm:w-[180px] max-[400px]:w-[120px]" alt="">
         <!-- Logo -->
