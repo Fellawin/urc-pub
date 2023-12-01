@@ -1,0 +1,307 @@
+{% if portal.current_tab and portal.current_tab == "home" %}
+    <section>
+      {{ page_message }}
+    </section>
+    <section class="container-fluid px-0 fw-helpcenter mb-md-n64">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-lg-6 mx-auto">
+            {% assign search_text = 'portal_translations.banner.search_text' | t %}
+            {{ portal | search_element: search_text }}
+            {{ portal | header_new_ticket_button }}
+            {% comment %}
+            <h1>WE ARE URC</h1>
+            <p>Our purpose is to delight everyone with good food choices.</p>
+            {% endcomment %}
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="container-fluid px-0 mt-16">
+    <div class="container">
+      <div class="row justify-content-center" id="portal-home_cards">
+        {%for card in portal.home_cards %}
+          {% if card.show %}
+            <div class="col-md-6 col-xl-3 mb-8">
+              <a class="card fw-horizontal" href="{{card.url}}" aria-label={{card.label}}>
+                <div class="col-3 px-0 my-auto text-center">
+                  <div class="fw-category-icon">
+                    {{ card.image }}
+                  </div>
+                </div>
+                <div class="card-body col-9">
+                  <h2 class="mt-0 card-title fs-18 line-clamp-2">{{card.label}}</h2>
+                  <p class="line-clamp-3">
+					{% if card.label == 'Browse articles' or card.label == 'Meet the community' %}
+                  		{{card.description}}
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+        <div class="col-md-6 col-xl-3 mb-8">
+          <a class="card fw-horizontal" href="" aria-label=>
+            <div class="col-3 px-0 my-auto text-center">
+              <div class="fw-category-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><style>.cls-1{fill:#fff;opacity:0.01;}.cls-2,.cls-3{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}.cls-2{stroke:#475867;}.cls-3{stroke:#00a886;}</style></defs><g id="White_BG" data-name="White BG"><rect class="cls-1" width="64" height="64"></rect></g><g id="Artwork"><circle class="cls-2" cx="32.05" cy="30.65" r="14.75"></circle><path class="cls-2" d="M38.27,44.4v8.8a1.56,1.56,0,0,1-1.55,1.56H27.39a1.56,1.56,0,0,1-1.55-1.56V44.4"></path><line class="cls-2" x1="30.54" y1="58.94" x2="33.65" y2="58.94"></line><path class="cls-2" d="M42.35,34.16a10.65,10.65,0,0,1-.87,1.91"></path><path class="cls-2" d="M32.05,19.78A10.88,10.88,0,0,1,42.93,30.65"></path><line class="cls-3" x1="32" y1="5.06" x2="32" y2="9.64"></line><line class="cls-3" x1="13.9" y1="12.55" x2="17.14" y2="15.79"></line><line class="cls-3" x1="50.1" y1="48.75" x2="46.86" y2="45.52"></line><line class="cls-3" x1="6.4" y1="30.65" x2="10.98" y2="30.65"></line><line class="cls-3" x1="57.6" y1="30.65" x2="53.02" y2="30.65"></line><line class="cls-3" x1="13.9" y1="48.75" x2="17.14" y2="45.52"></line><line class="cls-3" x1="50.1" y1="12.55" x2="46.86" y2="15.79"></line></g></svg>
+              </div>
+            </div>
+            <div class="card-body col-9">
+              <h2 class="mt-0 card-title fs-18 line-clamp-2">Send a Delivery Query</h2>
+              <p class="line-clamp-3">
+              	Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis quisquam perspiciatis exercitationem ipsam, quibusdam sed impedit, ipsum recusandae aperiam minima quod quasi esse. Earum.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid px-0 mt-40 mb-40">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-lg-6 mx-auto">
+          <div class="video-feed">
+            <div class="video-hero">
+            </div>
+            <div class="video-list">
+          	</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% assign solutionCards = 1 %}
+  {% assign solutionCardsLimit = 3 %}
+  {% if portal.has_solutions and solutionCardsLimit != 0 %}
+    <section class="container-fluid px-0">
+      <div class="container">
+        <div class="fw-section-heading text-center mt-28 mt-md-44 mb-24 mb-md-16">
+          <h2>{{ 'portal_translations.home.solutions' | t }}</h2>
+          <a href="{{ portal.solutions_home_url }}" style="pointer-events: none; color: #b91318;">
+            {% comment %}
+            {{ 'portal_translations.home.view_articles' | t }}
+            {% endcomment %}
+            Coming Soon
+          </a>
+        </div>
+        <div class="row justify-content-center">
+          {% for category in portal.solution_categories %}
+            {% if solutionCards > solutionCardsLimit %}{% break %}{% endif %}
+		        {% if category.folders_count > 0 %}
+              {% for folder in category.folders %}
+                {% assign solutionCards = solutionCards | plus:1 %}
+                <div class="col-md-4 col-xl-3 mb-8">
+                  <a class="card h-100 fw-kbase-card" aria-label="{{ category.name | escape_once }}" href="{{ category.url }}">
+                    <div class="px-0 my-auto fw-icon-holder">
+                      {% if category.icon %}
+                        <img src="{{category.icon}}" class="img-fluid" alt="{{ category.name | escape_once }}">
+                      {% else %}
+                        <span class="icon-category"></span>
+                      {% endif %}
+                    </div>
+                    <div class="card-body">
+                      <p class="mt-0 card-title fs-18 line-clamp-2">{{ category.name | escape_once }}</p>
+                      <p class="line-clamp-2">{{ category.description }}</p>
+                    </div>
+                  </a>
+                </div>
+                {% break %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% assign forumCards = 1 %}
+  {% assign forumCardsLimit = 3 %}
+  {% if portal.has_forums and forumCardsLimit != 0 %}
+    <section class="container-fluid px-0 pb-60">
+      <div class="container">
+        <div class="fw-section-heading text-center mt-28 mt-md-44 mb-24 mb-md-16">
+          <h2>{{ 'portal_translations.home.forums' | t }}</h2>
+          <a href="{{ portal.discussions_home_url }}">{{ 'portal_translations.home.view_topics' | t }}</a>
+        </div>
+        <div class="row justify-content-center">
+          {% for category in portal.forum_categories %}
+            {% if forumCards > forumCardsLimit %}{% break %}{% endif %}
+            {% if category.forums_count > 0 %}
+              {% for forum in category.forums %}
+                {% assign forumCards = forumCards | plus:1 %}
+                <div class="col-md-4 col-xl-3 mb-8">
+                  <a class="card h-100" href="{{ category.url }}" aria-label="{{ category.name | escape_once }}">
+                    <div class="card-body">
+                      <p class="mt-0 card-title fs-18 line-clamp-2">{{ category.name | escape_once }}</p>
+                      <p class="line-clamp-2">{{ category.description | escape_once }}</p>
+                    </div>
+                  </a>
+                </div>
+                {% break %}
+              {% endfor %}
+            {% endif %}
+         {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="container-fluid px-0 pt-60 pb-44 bg-light">
+    <div class="container">
+    {% if portal.has_solutions %}
+      {% assign articles = portal | popular_articles:4 %}
+      {% if articles.size > 0 %}
+        <div class="col-xl-9 mx-auto mb-32">
+          <div class="fw-section-heading row mb-16">
+            <div class="col-md-8 text-center text-lg-start">
+              <h4>{{ 'portal_translations.home.popular_articles' | t }}</h4>
+            </div>
+            <div class="col-md-4 text-center text-end">
+              <a href="{{portal.solutions_home_url}}" style="pointer-events: none;">
+                {% comment %}
+                {{ 'portal_translations.home.view_articles' | t }}
+                {% endcomment %}
+                Coming Soon
+              </a>
+            </div>
+          </div>
+          <div class="fw-articles">
+            <div class="row">
+              {% for article in articles %}
+              <a class="col-md-6 fw-article-info d-flex" href="{{article.url}}" aria-label='{{ 'portal_translations.home.url-aria-label' | t }}'>
+                <div class="pt-4 pe-8"><span class="icon-article pr-8"></span></div>
+                <div>
+                  <p class="fs-18 semi-bold line-clamp-2">{{article.title}}</p>
+                  <p class="line-clamp-2 fw-meta-info">{{ article | solution_author_info: 'portal_home' }}
+                  </p>
+                </div>
+                <p></p>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+
+    {% if portal.has_forums %}
+      {% assign topics = portal.most_viewed_topics %}
+      {% if topics.size > 0 %}
+        <div class="col-xl-9 mx-auto">
+          <div class="fw-section-heading row mb-16">
+            <div class="col-md-8  text-center text-lg-start">
+              <h4>{{ 'portal_translations.home.treanding_topics' | t }}</h4>
+            </div>
+            <div class="col-md-4 text-center text-end">
+              <a href="{{portal.discussions_home_url}}">{{ 'portal_translations.home.view_topics' | t }}</a>
+            </div>
+          </div>
+          <div class="fw-articles odd-count">
+            <div class="row">
+              {% for topic in topics limit:4 %}
+              <a class="col-md-6 fw-article-info d-flex" href="{{topic.topic_url}}" aria-label="{% translate portal_translations.home.url-aria-label %}">
+                <div class="pt-4 pe-8"><span class="icon-topic pe-8"></span></div>
+                <div>
+                  <p class="fs-18 semi-bold line-clamp-2">{{ topic.title | escape_once }}</p>
+                  <p class="line-clamp-2 fw-meta-info">{% translate portal_translations.home.topic.created_on %} {{topic.created_on_strftime}} {% translate portal_translations.home.topic.by %} {{topic.author_name}}</p>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+    </div>
+  </section>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+{% assign encryptedapi = '5HbfRzouIvaOhFwpw5iD:x' | sha256 %}
+<script>
+const _0x3e18a3=_0x4f1f;(function(_0x1e62ee,_0x34ba1c){const _0x20e2c9=_0x4f1f,_0x51a16f=_0x1e62ee();while(!![]){try{const _0x17f533=parseInt(_0x20e2c9(0xc4))/(-0x12d9+-0xcd4*-0x1+0x606)*(-parseInt(_0x20e2c9(0xa5))/(-0xb8e+0x4f*-0x5+0x29f*0x5))+parseInt(_0x20e2c9(0x9d))/(0x9c2*0x2+-0x17e0+-0x175*-0x3)+-parseInt(_0x20e2c9(0xba))/(-0x4fa+0x77f+0x1*-0x281)+-parseInt(_0x20e2c9(0xb2))/(-0xd49*-0x1+0x16fe+0x2a*-0xdd)*(parseInt(_0x20e2c9(0x76))/(-0x1*-0x158b+0xd8b+-0x2310))+-parseInt(_0x20e2c9(0x7b))/(-0xdc6+-0xcb9+-0x1a86*-0x1)*(parseInt(_0x20e2c9(0xa9))/(-0x1328+0x8c8+0xa68))+-parseInt(_0x20e2c9(0xb1))/(-0x1d1a+0x1aa+0x1b79)+parseInt(_0x20e2c9(0xcd))/(-0x21*0x84+0x1*-0x1fb2+0x30c0)*(parseInt(_0x20e2c9(0xb4))/(-0x1337+-0x39c+0x16de));if(_0x17f533===_0x34ba1c)break;else _0x51a16f['push'](_0x51a16f['shift']());}catch(_0x3fe3f2){_0x51a16f['push'](_0x51a16f['shift']());}}}(_0x4543,0x37097*0x4+-0x1*-0xae2b7+-0x3a*0x4acb));let headers=new Headers();headers[_0x3e18a3(0x9c)](_0x3e18a3(0xc2),_0x3e18a3(0x99)+_0x3e18a3(0xb5));function _0x4543(){const _0x576637=['equest\x20err','aFMtD','\x20\x20<source\x20','title','5327541mEPxyI','4303135JOKQlC','kIQjd','11YHbxmB','n/json','attachment','Either\x20rea','e\x20mb-20\x22>','/video>\x0a\x20\x20','3347192RQMEZT','gwUDk','\x20<video\x20lo','location','rowser\x20doe','or,\x20click\x20','toplay\x20loo','here\x20for\x20m','Accept','ontrols>\x0a\x20','265AEoTKm','<p\x20class=\x22','\x20<video\x20au','https://ur','Basic\x20','/support/h','ions/folde','JVsyg','catch','28909950yvBezm','OjAsK','\x20src=\x22','eNiI8eOB8Y','json','GET','esk.com/ap','ero','Authorizat','6RainMj','46221/arti','JIaVq','addClass','\x20\x20\x20\x20\x20\x20\x20\x20\x20<','35yzHtcX','ntrols>\x0a\x20\x20','\x20\x20\x20\x20\x20\x20','deo/mp4\x22>\x0a','indexOf','d\x20.video-h','video-titl','s\x20not\x20supp','ion','ome','</p>','href','ch\x20maximum','btoa','xZLPv','\x20\x20\x20\x20Your\x20b','src=\x22','\x22\x20type=\x22vi','\x20\x20\x20<source','single','ore\x20info.','rs/1500004','57qRtlpurI','log','deo\x20tag.\x0a\x20','\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','d\x20.video-l','length','cSLsf','then','applicatio','BPqGv','\x20limit\x20or\x20','append','1402773fPqyAG','ist','cles','skuvc','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20','.video-fee','i/v2/solut','crd.freshd','1330izxfuz','an\x20https\x20r','p\x20muted\x20co','_url','621424tkwXCu','descriptio','op\x20muted\x20c','ort\x20the\x20vi'];_0x4543=function(){return _0x576637;};return _0x4543();}let encoded=window[_0x3e18a3(0x88)](_0x3e18a3(0x91)+_0x3e18a3(0xd0)+':x'),auth=_0x3e18a3(0xc8)+encoded;headers[_0x3e18a3(0x9c)](_0x3e18a3(0x75)+_0x3e18a3(0x83),auth);function _0x4f1f(_0x283ae4,_0x2ac780){const _0x5edf03=_0x4543();return _0x4f1f=function(_0x9ecb32,_0x23a04c){_0x9ecb32=_0x9ecb32-(-0x1382*0x2+0xa67+0x1d10);let _0x40de8b=_0x5edf03[_0x9ecb32];return _0x40de8b;},_0x4f1f(_0x283ae4,_0x2ac780);}let uri=_0x3e18a3(0xc7)+_0x3e18a3(0xa4)+_0x3e18a3(0x73)+_0x3e18a3(0xa3)+_0x3e18a3(0xca)+_0x3e18a3(0x90)+_0x3e18a3(0x77)+_0x3e18a3(0x9f),req=new Request(uri,{'method':_0x3e18a3(0xd2),'headers':headers});function getNewVideoDisplay(){const _0x226030=_0x3e18a3,_0x509745={'JVsyg':_0x226030(0xb7)+_0x226030(0x87)+_0x226030(0x9b)+_0x226030(0xa6)+_0x226030(0xad)+_0x226030(0xbf)+_0x226030(0xc1)+_0x226030(0x8f),'skuvc':function(_0x20d9be,_0x5e1974){return _0x20d9be<_0x5e1974;},'kIQjd':function(_0x5697bc,_0x40a5e8){return _0x5697bc==_0x40a5e8;},'xZLPv':function(_0x50470b,_0x1e52de){return _0x50470b(_0x1e52de);},'cSLsf':_0x226030(0xa2)+_0x226030(0x80)+_0x226030(0x74),'BPqGv':_0x226030(0xa2)+_0x226030(0x95)+_0x226030(0x9e),'OjAsK':function(_0x606c2e,_0x125786){return _0x606c2e==_0x125786;},'aFMtD':function(_0x414fb2,_0x1d6c49){return _0x414fb2(_0x1d6c49);},'JIaVq':_0x226030(0xa2)+'d','gwUDk':_0x226030(0x8e)};_0x509745[_0x226030(0xae)](fetch,req)[_0x226030(0x98)](_0x3c6f53=>{const _0x46a165=_0x226030;if(_0x3c6f53['ok'])return _0x3c6f53[_0x46a165(0xd1)]();else throw new Error(_0x509745[_0x46a165(0xcb)]);})[_0x226030(0x98)](_0x117e78=>{const _0x1b96ea=_0x226030;for(var _0x2406eb=0x2c9+0x61d*-0x5+0x1bc8;_0x509745[_0x1b96ea(0xa0)](_0x2406eb,_0x117e78[_0x1b96ea(0x96)]);_0x2406eb++){var _0x48246e=_0x117e78[_0x2406eb][_0x1b96ea(0xaa)+'n'];console[_0x1b96ea(0x92)](_0x117e78[_0x2406eb][_0x1b96ea(0xb6)+'s'][-0x114c+-0x1*0x269f+-0x199*-0x23]);if(_0x509745[_0x1b96ea(0xb3)](_0x2406eb,0x1*-0x15fd+0xe81+0x77c))var _0x55e7dd=_0x1b96ea(0xa1)+_0x1b96ea(0x94)+_0x1b96ea(0xc6)+_0x1b96ea(0xc0)+_0x1b96ea(0xa7)+_0x1b96ea(0x7c)+_0x1b96ea(0x94)+_0x1b96ea(0x94)+_0x1b96ea(0xaf)+_0x1b96ea(0x8b)+_0x117e78[_0x2406eb][_0x1b96ea(0xb6)+'s'][0x31*-0x37+-0x1e3d*-0x1+0x13b6*-0x1][_0x1b96ea(0xb6)+_0x1b96ea(0xa8)]+(_0x1b96ea(0x8c)+_0x1b96ea(0x7e)+_0x1b96ea(0x94)+_0x1b96ea(0x94)+_0x1b96ea(0x8a)+_0x1b96ea(0xbe)+_0x1b96ea(0x82)+_0x1b96ea(0xac)+_0x1b96ea(0x93)+_0x1b96ea(0x94)+_0x1b96ea(0x7a)+_0x1b96ea(0xb9)+_0x1b96ea(0x94)+_0x1b96ea(0x7d));else var _0x55e7dd=_0x1b96ea(0xa1)+_0x1b96ea(0x94)+_0x1b96ea(0xbc)+_0x1b96ea(0xab)+_0x1b96ea(0xc3)+_0x1b96ea(0x94)+_0x1b96ea(0x94)+_0x1b96ea(0x8d)+_0x1b96ea(0xcf)+_0x117e78[_0x2406eb][_0x1b96ea(0xb6)+'s'][0x2353*0x1+0x113c+-0x348f][_0x1b96ea(0xb6)+_0x1b96ea(0xa8)]+(_0x1b96ea(0x8c)+_0x1b96ea(0x7e)+_0x1b96ea(0x94)+_0x1b96ea(0x94)+_0x1b96ea(0x8a)+_0x1b96ea(0xbe)+_0x1b96ea(0x82)+_0x1b96ea(0xac)+_0x1b96ea(0x93)+_0x1b96ea(0x94)+_0x1b96ea(0x7a)+_0x1b96ea(0xb9)+_0x1b96ea(0x94)+_0x1b96ea(0x7d));_0x509745[_0x1b96ea(0xb3)](_0x2406eb,-0x21ee+0x1da0+0x2*0x227)?(_0x509745[_0x1b96ea(0x89)](jQuery,_0x509745[_0x1b96ea(0x97)])[_0x1b96ea(0x9c)](_0x1b96ea(0xc5)+_0x1b96ea(0x81)+_0x1b96ea(0xb8)+_0x117e78[_0x2406eb][_0x1b96ea(0xb0)]+_0x1b96ea(0x85)),_0x509745[_0x1b96ea(0x89)](jQuery,_0x509745[_0x1b96ea(0x97)])[_0x1b96ea(0x9c)](_0x55e7dd),console[_0x1b96ea(0x92)](_0x117e78[_0x2406eb][_0x1b96ea(0xaa)+'n'])):(_0x509745[_0x1b96ea(0x89)](jQuery,_0x509745[_0x1b96ea(0x97)])[_0x1b96ea(0x9c)](_0x1b96ea(0xc5)+_0x1b96ea(0x81)+_0x1b96ea(0xb8)+_0x117e78[_0x2406eb][_0x1b96ea(0xb0)]+_0x1b96ea(0x85)),_0x509745[_0x1b96ea(0x89)](jQuery,_0x509745[_0x1b96ea(0x9a)])[_0x1b96ea(0x9c)](_0x55e7dd),console[_0x1b96ea(0x92)](_0x117e78[_0x2406eb][_0x1b96ea(0xaa)+'n']));}_0x509745[_0x1b96ea(0xce)](_0x117e78[_0x1b96ea(0x96)],-0xd*0x71+-0x26b*0x3+0x455*0x3)&&_0x509745[_0x1b96ea(0xae)](jQuery,_0x509745[_0x1b96ea(0x78)])[_0x1b96ea(0x79)](_0x509745[_0x1b96ea(0xbb)]);})[_0x226030(0xcc)](_0x59be79=>{const _0x28b2ab=_0x226030;console[_0x28b2ab(0x92)](_0x59be79);});}window[_0x3e18a3(0xbd)][_0x3e18a3(0x86)][_0x3e18a3(0x7f)](_0x3e18a3(0xc9)+_0x3e18a3(0x84))>-(0x216+-0x1*0x10cf+-0x1*-0xeba)&&getNewVideoDisplay();
+</script>
+{% comment %}
+========================================
+This is source code of api
+Please don't delete because this script is obfuscated so the api is secured
+========================================
+
+<script>
+let headers = new Headers();
+headers.append('Accept', 'application/json');
+let encoded = window.btoa('57qRtlpurIeNiI8eOB8Y:x');
+let auth = 'Basic ' + encoded;
+headers.append('Authorization', auth);
+let uri = "https://urcrd.freshdesk.com/api/v2/solutions/folders/150000446221/articles";
+let req = new Request(uri, {
+    method: 'GET',
+    headers: headers
+});
+
+function getNewVideoDisplay() {
+    fetch(req)
+        .then((response) => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Either reach maximum limit or an https request error, click here for more info.');
+            }
+        })
+        .then((jsonData) => {
+            for (var i = 0; i < jsonData.length; i++) {
+                var html = jsonData[i].description;
+                console.log(jsonData[i].attachments[0]);
+              	if(i == 0){
+                  var iframevid = `
+                    <video autoplay loop muted controls>
+                        <source src="${jsonData[i].attachments[0].attachment_url}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                  `;
+                }else{
+                  var iframevid = `
+                    <video loop muted controls>
+                        <source src="${jsonData[i].attachments[0].attachment_url}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                  `;
+                }
+                // var iframevid = jQuery(html).find('iframe');
+                if (i == 0) {
+                    jQuery('.video-feed .video-hero').append(`<p class="video-title mb-20">${jsonData[i].title}</p>`);
+                    jQuery('.video-feed .video-hero').append(iframevid);
+                    // if(jsonData[i].attachments[0].attachment_url != "" || jsonData[i].attachments[0].attachment_url != null ){
+                    //     jQuery('.video-feed .video-hero').after(`<a href='${jsonData[i].attachments[0].attachment_url}' download>Download</a>`)
+                    // }
+                    console.log(jsonData[i].description);
+
+                } else {
+                    jQuery('.video-feed .video-hero').append(`<p class="video-title mb-20">${jsonData[i].title}</p>`);
+                    jQuery('.video-feed .video-list').append(iframevid);
+                    // if(jsonData[i].attachments[0].attachment_url != "" || jsonData[i].attachments[0].attachment_url != null ){
+                    //     jQuery('.video-feed .video-hero').after(`<a href='${jsonData[i].attachments[0].attachment_url}' download>Download</a>`)
+                    // }
+                    console.log(jsonData[i].description);
+                }
+            }
+            if (jsonData.length == 1) {
+                jQuery('.video-feed').addClass('single');
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
+if (window.location.href.indexOf("/support/home") > -1) {
+    getNewVideoDisplay()
+}
+</script>
+
+{% endcomment %}
+<script>
+  
+</script>
