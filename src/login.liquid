@@ -1,0 +1,1935 @@
+<style>
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active{
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+/*
+! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+*/
+
+html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.collapse {
+  visibility: collapse;
+}
+
+.\!absolute {
+  position: absolute !important;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.bottom-\[46px\] {
+  bottom: 46px;
+}
+
+.bottom-\[54px\] {
+  bottom: 54px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.right-\[192px\] {
+  right: 192px;
+}
+
+.right-\[60px\] {
+  right: 60px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.\!z-10 {
+  z-index: 10 !important;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.my-80 {
+  margin-top: 20rem;
+  margin-bottom: 20rem;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.\!mb-\[25px\] {
+  margin-bottom: 25px !important;
+}
+
+.\!mb-\[30px\] {
+  margin-bottom: 30px !important;
+}
+
+.\!mb-\[3px\] {
+  margin-bottom: 3px !important;
+}
+
+.\!mr-\[14px\] {
+  margin-right: 14px !important;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
+.mb-40 {
+  margin-bottom: 10rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-\[20px\] {
+  margin-bottom: 20px;
+}
+
+.mb-\[27px\] {
+  margin-bottom: 27px;
+}
+
+.mb-\[37px\] {
+  margin-bottom: 37px;
+}
+
+.me-8 {
+  margin-inline-end: 2rem;
+}
+
+.ml-\[20px\] {
+  margin-left: 20px;
+}
+
+.mr-\[18px\] {
+  margin-right: 18px;
+}
+
+.mr-\[8px\] {
+  margin-right: 8px;
+}
+
+.ms-auto {
+  margin-inline-start: auto;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mt-28 {
+  margin-top: 7rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
+}
+
+.mt-64 {
+  margin-top: 16rem;
+}
+
+.mt-\[100px\] {
+  margin-top: 100px;
+}
+
+.mt-\[120px\] {
+  margin-top: 120px;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.block {
+  display: block;
+}
+
+.\!flex {
+  display: flex !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.\!h-fit {
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+}
+
+.\!h-full {
+  height: 100% !important;
+}
+
+.h-\[100px\] {
+  height: 100px;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
+.h-\[30px\] {
+  height: 30px;
+}
+
+.h-\[50px\] {
+  height: 50px;
+}
+
+.min-h-\[100vh\] {
+  min-height: 100vh;
+}
+
+.\!w-\[348px\] {
+  width: 348px !important;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-\[1100px\] {
+  width: 1100px;
+}
+
+.w-\[1220px\] {
+  width: 1220px;
+}
+
+.w-\[14px\] {
+  width: 14px;
+}
+
+.w-\[157px\] {
+  width: 157px;
+}
+
+.w-\[16px\] {
+  width: 16px;
+}
+
+.w-\[185px\] {
+  width: 185px;
+}
+
+.w-\[18px\] {
+  width: 18px;
+}
+
+.w-\[230px\] {
+  width: 230px;
+}
+
+.w-\[30px\] {
+  width: 30px;
+}
+
+.w-\[325px\] {
+  width: 325px;
+}
+
+.w-\[390px\] {
+  width: 390px;
+}
+
+.w-\[425px\] {
+  width: 425px;
+}
+
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-\[1304px\] {
+  max-width: 1304px;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.\!items-center {
+  align-items: center !important;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+}
+
+.\!rounded-full {
+  border-radius: 9999px !important;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.border-0 {
+  border-width: 0px;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.\!border-b-0 {
+  border-bottom-width: 0px !important;
+}
+
+.\!border-r-0 {
+  border-right-width: 0px !important;
+}
+
+.\!border-t-0 {
+  border-top-width: 0px !important;
+}
+
+.border-s-2 {
+  border-inline-start-width: 2px;
+}
+
+.\!border-solid {
+  border-style: solid !important;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-none {
+  border-style: none;
+}
+
+.\!border-\[\#b1bdc8\] {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(177 189 200 / var(--tw-border-opacity)) !important;
+}
+
+.border-line-gray {
+  --tw-border-opacity: 1;
+  border-color: rgb(204 204 204 / var(--tw-border-opacity));
+}
+
+.\!bg-fade-red {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(224 30 38 / var(--tw-bg-opacity)) !important;
+}
+
+.\!bg-fader-red {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(223 30 38 / var(--tw-bg-opacity)) !important;
+}
+
+.\!bg-white {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+
+.bg-brand-gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(137 137 137 / var(--tw-bg-opacity));
+}
+
+.bg-head-red {
+  --tw-bg-opacity: 1;
+  background-color: rgb(227 5 18 / var(--tw-bg-opacity));
+}
+
+.bg-login-background {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.\!bg-home-banner {
+  background-image: url('/src/assets/URC-Banner-Portal.png') !important;
+}
+
+.bg-none {
+  background-image: none;
+}
+
+.\!bg-cover {
+  background-size: cover !important;
+}
+
+.\!bg-center {
+  background-position: center !important;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.p-16 {
+  padding: 4rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.\!px-\[5px\] {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
+.\!px-\[8px\] {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.\!py-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.\!py-\[12px\] {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-\[12px\] {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.px-\[16px\] {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.px-\[18px\] {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-\[40px\] {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.px-\[5px\] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-40 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.py-\[14px\] {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.py-\[18px\] {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.\!pb-\[172px\] {
+  padding-bottom: 172px !important;
+}
+
+.\!pl-\[11px\] {
+  padding-left: 11px !important;
+}
+
+.\!pl-\[16px\] {
+  padding-left: 16px !important;
+}
+
+.\!pr-\[136px\] {
+  padding-right: 136px !important;
+}
+
+.\!pr-\[44px\] {
+  padding-right: 44px !important;
+}
+
+.\!pt-\[101px\] {
+  padding-top: 101px !important;
+}
+
+.pb-44 {
+  padding-bottom: 11rem;
+}
+
+.pl-\[10px\] {
+  padding-left: 10px;
+}
+
+.pr-0 {
+  padding-right: 0px;
+}
+
+.ps-32 {
+  padding-inline-start: 8rem;
+}
+
+.ps-8 {
+  padding-inline-start: 2rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
+}
+
+.pt-60 {
+  padding-top: 15rem;
+}
+
+.\!text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.font-nunito {
+  font-family: "Nunito";
+}
+
+.\!text-\[16px\] {
+  font-size: 16px !important;
+}
+
+.\!text-\[18px\] {
+  font-size: 18px !important;
+}
+
+.\!text-\[57px\] {
+  font-size: 57px !important;
+}
+
+.\!text-xl {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+.text-\[22px\] {
+  font-size: 22px;
+}
+
+.text-\[24px\] {
+  font-size: 24px;
+}
+
+.text-\[40px\] {
+  font-size: 40px;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.\!font-normal {
+  font-weight: 400 !important;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.\!leading-\[30px\] {
+  line-height: 30px !important;
+}
+
+.leading-47px {
+  line-height: 47px;
+}
+
+.leading-\[30px\] {
+  line-height: 30px;
+}
+
+.leading-\[56px\] {
+  line-height: 56px;
+}
+
+.\!text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
+
+.\!text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.text-\[\#cc0000\] {
+  --tw-text-opacity: 1;
+  color: rgb(204 0 0 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-brand-red {
+  --tw-text-opacity: 1;
+  color: rgb(176 4 14 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.shadow-none {
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.\!drop-shadow-\[0_1px_0\.5px_rgba\(1\2c 1\2c 1\2c 0\.18\)\] {
+  --tw-drop-shadow: drop-shadow(0 1px 0.5px rgba(1,1,1,0.18)) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.first\:mr-\[22px\]:first-child {
+  margin-right: 22px;
+}
+
+.first\:pl-0:first-child {
+  padding-left: 0px;
+}
+
+.last\:pr-0:last-child {
+  padding-right: 0px;
+}
+
+.autofill\:shadow-\[0_0_0_30px_white\]:-webkit-autofill {
+  --tw-shadow: 0 0 0 30px white;
+  --tw-shadow-colored: 0 0 0 30px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.autofill\:shadow-\[0_0_0_30px_white\]:autofill {
+  --tw-shadow: 0 0 0 30px white;
+  --tw-shadow-colored: 0 0 0 30px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.autofill\:shadow-inner:-webkit-autofill {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.autofill\:shadow-inner:autofill {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.focus-within\:\!border-head-red:focus-within {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(227 5 18 / var(--tw-border-opacity)) !important;
+}
+
+.focus-within\:border-brand-red:focus-within {
+  --tw-border-opacity: 1;
+  border-color: rgb(176 4 14 / var(--tw-border-opacity));
+}
+
+.hover\:scale-\[115\%\]:hover {
+  --tw-scale-x: 115%;
+  --tw-scale-y: 115%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:\!bg-brand-red:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(176 4 14 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:\!bg-head-red:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(227 5 18 / var(--tw-bg-opacity)) !important;
+}
+
+.hover\:\!text-white:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+.focus\:border-none:focus {
+  border-style: none;
+}
+
+.focus\:shadow-none:focus {
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.group:focus-within .group-focus-within\:\!bg-head-red {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(227 5 18 / var(--tw-bg-opacity)) !important;
+}
+
+.group:focus-within .group-focus-within\:bg-brand-red {
+  --tw-bg-opacity: 1;
+  background-color: rgb(176 4 14 / var(--tw-bg-opacity));
+}
+
+.group:focus-within .group-focus-within\:\!text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
+@media (max-width: 1300px) {
+  .max-\[1300px\]\:w-full {
+    width: 100%;
+  }
+
+  .max-\[1300px\]\:px-\[100px\] {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .max-\[1100px\]\:mb-\[74px\] {
+    margin-bottom: 74px;
+  }
+
+  .max-\[1100px\]\:flex {
+    display: flex;
+  }
+
+  .max-\[1100px\]\:w-full {
+    width: 100%;
+  }
+
+  .max-\[1100px\]\:flex-col {
+    flex-direction: column;
+  }
+
+  .max-\[1100px\]\:items-center {
+    align-items: center;
+  }
+
+  .max-\[1100px\]\:text-center {
+    text-align: center;
+  }
+}
+
+@media not all and (min-width: 768px) {
+  .max-md\:w-\[250px\] {
+    width: 250px;
+  }
+
+  .max-md\:w-\[285px\] {
+    width: 285px;
+  }
+
+  .max-md\:px-\[20px\] {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media not all and (min-width: 640px) {
+  .max-sm\:relative {
+    position: relative;
+  }
+
+  .max-sm\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .max-sm\:right-0 {
+    right: 0px;
+  }
+
+  .max-sm\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .max-sm\:my-\[24px\] {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .max-sm\:\!mb-\[12px\] {
+    margin-bottom: 12px !important;
+  }
+
+  .max-sm\:\!mt-\[12px\] {
+    margin-top: 12px !important;
+  }
+
+  .max-sm\:mb-\[20px\] {
+    margin-bottom: 20px;
+  }
+
+  .max-sm\:mb-\[24px\] {
+    margin-bottom: 24px;
+  }
+
+  .max-sm\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .max-sm\:ml-\[10px\] {
+    margin-left: 10px;
+  }
+
+  .max-sm\:mr-auto {
+    margin-right: auto;
+  }
+
+  .max-sm\:mb-\[46px\] {
+    margin-bottom: 46px;
+  }
+
+  .max-sm\:\!flex {
+    display: flex !important;
+  }
+
+  .max-sm\:flex {
+    display: flex;
+  }
+
+  .max-sm\:\!h-full {
+    height: 100% !important;
+  }
+
+  .max-sm\:w-\[150px\] {
+    width: 150px;
+  }
+
+  .max-sm\:w-\[180px\] {
+    width: 180px;
+  }
+
+  .max-sm\:w-\[215px\] {
+    width: 215px;
+  }
+
+  .max-sm\:w-\[70px\] {
+    width: 70px;
+  }
+
+  .max-sm\:w-\[95\%\] {
+    width: 95%;
+  }
+
+  .max-sm\:w-auto {
+    width: auto;
+  }
+
+  .max-sm\:\!flex-col {
+    flex-direction: column !important;
+  }
+
+  .max-sm\:flex-col {
+    flex-direction: column;
+  }
+
+  .max-sm\:items-center {
+    align-items: center;
+  }
+
+  .max-sm\:\!overflow-auto {
+    overflow: auto !important;
+  }
+
+  .max-sm\:\!pr-\[16px\] {
+    padding-right: 16px !important;
+  }
+
+  .max-sm\:pr-\[24px\] {
+    padding-right: 24px;
+  }
+
+  .max-sm\:text-center {
+    text-align: center;
+  }
+
+  .max-sm\:text-\[16px\] {
+    font-size: 16px;
+  }
+
+  .max-sm\:text-\[32px\] {
+    font-size: 32px;
+  }
+
+  .max-sm\:leading-\[38px\] {
+    line-height: 38px;
+  }
+}
+
+@media (max-width: 400px) {
+  .max-\[400px\]\:w-\[120px\] {
+    width: 120px;
+  }
+
+  .max-\[400px\]\:w-\[130px\] {
+    width: 130px;
+  }
+
+  .max-\[400px\]\:w-\[180px\] {
+    width: 180px;
+  }
+
+  .max-\[400px\]\:w-\[110px\] {
+    width: 110px;
+  }
+
+  .max-\[400px\]\:text-\[12px\] {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 400px) {
+  .min-\[400px\]\:mt-0 {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .min-\[1600px\]\:w-\[1485px\] {
+    width: 1485px;
+  }
+
+  .min-\[1600px\]\:w-\[657px\] {
+    width: 657px;
+  }
+
+  .min-\[1600px\]\:w-\[974px\] {
+    width: 974px;
+  }
+}
+</style>
+<!-- Background overlay -->
+<img src="https://i.imgur.com/qbFK115.png" class="absolute top-0 left-0 pointer-events-none w-full" alt="">
+<!-- Left top overlay -->
+<img src="https://i.imgur.com/eEB26la.png" class="absolute top-0 left-0 pointer-events-none" alt="">
+<!-- Bottom Overlay -->
+<img src="https://i.imgur.com/ikJKDug.png" class="absolute bottom-0 right-0 min-[1600px]:w-[1485px] w-[1220px] pointer-events-none" alt="">
+<!-- Laptop -->
+<img src="https://i.imgur.com/t2mevHP.png" class="absolute top-0 right-0 min-[1600px]:w-[974px] w-[425px] pointer-events-none transition ease-in-out duration-300 max-md:w-[250px] max-sm:w-[180px] max-[400px]:w-[120px]" alt="">
+<!-- Logo -->
+<img src="https://i.imgur.com/5l3226A.png" class="absolute top-0 left-0 min-[1600px]:w-[657px] w-[325px] pointer-events-none transition ease-in-out duration-300 max-md:w-[285px] max-sm:w-[215px] max-[400px]:w-[110px]" alt="">
+<section class="w-[1100px] max-[1300px]:px-[100px] max-[1300px]:w-full flex max-[1100px]:flex-col max-md:px-[20px] mt-[120px] min-[400px]:mt-0 z-10">
+    <div class="robina w-1/2 max-[1100px]:w-full max-[1100px]:mb-[74px] max-[1100px]:items-center max-[1100px]:flex max-[1100px]:flex-col max-sm:mb-[24px]  mx-0">
+      <div class="uppercase text-[22px] max-sm:text-[16px] max-sm:leading-[38px] font-bold !text-black font-nunito leading-47px max-[1100px]:text-center">Welcome to</div>
+      <div class="capitalize text-[40px] max-sm:text-[32px] max-sm:leading-[38px] font-medium !text-black font-nunito leading-47px mb-[37px] max-sm:mb-[24px] max-[1100px]:text-center">Universal Robina <br/> Customer Support Portal</div>
+      <div class="controllers flex rounded-full border-2 border-line-gray border-solid w-[390px] max-sm:w-[95%] max-sm:mx-auto">
+        <label for="" class="w-[230px] max-sm:w-auto max-sm:mr-auto py-[14px] px-[16px] h-[50px] text-sm max-[400px]:text-[12px] flex items-center">
+          <img src="https://i.imgur.com/RGl2xrI.png" class="w-[18px] object-contain mr-[18px]" alt="">
+          Are you an agent?
+        </label>
+        <button class="w-[157px] py-[14px] px-[16px] border-s-2 border-line-gray border-solid uppercase whitespace-nowrap h-[50px] text-sm max-[400px]:text-[12px] flex items-center max-[400px]:w-[130px] max-sm:!pr-[16px]">
+          Login here
+          <img src="https://i.imgur.com/zqkOvhb.png" class="w-[16px] object-contain ml-[20px] max-sm:ml-[10px]" alt="">    
+        </button>
+      </div>
+    </div>
+    <div class="row fw-loginform-wrapper justify-content-center align-items-center w-1/2 max-[1100px]:w-full mx-0 py-0" id="loginForm">
+      <div class="w-full fw-form-section px-0">
+        {{ page_message }}
+        {% snippet login_error_messages %}
+        <div class="form shadow-none bg-none bg-transparent py-0 px-0 pl-[10px]">
+          <form novalidate="novalidate" class="new_user_session" id="new_user_session" action="/support/login" accept-charset="UTF-8" method="post">
+            <input name="utf8" type="hidden" value="✓" /><input type="hidden" name="authenticity_token" value="qSM0Qc4fOJjff4Il1SbxZ/6D7e+nlKhAsH+2BRT/qqSO/oBHEO3LP/Q+8ob1T7BnWOObnrDQsxlx3T502Cpr4w==" />
+            <h1 class="uppercase font-nunito !text-[18px] font-bold text-black !mb-[30px] max-sm:text-center">Log in your account</h1>
+
+            <div class="form-group flex px-[12px] py-[10px] rounded-full border-line-gray border-2 border-solid focus-within:border-brand-red transition ease-in-out duration-300 group mb-[20px] bg-white max-sm:w-[95%] max-sm:mx-auto">
+              <label for="emailInput" class="form-label m-0">
+                <!-- Your e-mail address -->
+                <div class="w-[30px] h-[30px] rounded-full flex bg-brand-gray items-center justify-center group-focus-within:bg-brand-red transition ease-in-out duration-300">
+                  <img src="https://i.imgur.com/4gHzTjy.png" class="w-[16px] object-contain " alt="">
+                </div>
+                <!-- <span class="fw-asterisk">*</span> -->
+              </label>
+
+              <input type="email" class="form-control border-none bg-none bg-transparent py-0 pr-0 focus:border-none focus:shadow-none rounded-full autofill:shadow-[0_0_0_30px_white] autofill:shadow-inner" id="emailInput" placeholder="Your e-mail address" name="user_session[email]" required="" aria_describedby="emailInput" />
+
+              <div class="invalid-feedback emailInput"></div>
+            </div>
+
+            <div class="form-group flex px-[12px] py-[10px] rounded-full border-line-gray border-2 border-solid focus-within:border-brand-red transition ease-in-out duration-300 group bg-white max-sm:w-[95%] max-sm:mx-auto">
+              <label for="passwordInput" class="form-label m-0">
+                <!-- Password -->
+                <div class="w-[30px] h-[30px] rounded-full flex bg-brand-gray items-center justify-center group-focus-within:bg-brand-red transition ease-in-out duration-300">
+                  <img src="https://i.imgur.com/Z1XworT.png" class="w-[14px] object-contain" alt="">
+                </div>
+                <!-- <span class="fw-asterisk">*</span> -->
+              </label>
+
+              <input type="password" class="form-control border-none bg-none bg-transparent py-0 pr-0 focus:border-none focus:shadow-none rounded-full autofill:shadow-[0_0_0_30px_white] autofill:shadow-inner" id="passwordInput" placeholder="Password" name="user_session[password]" required="" aria_describedby="passwordInput" />
+
+              <div class="invalid-feedback passwordInput"></div>
+            </div>
+            <div class="flex justify-between max-sm:flex-col max-sm:items-center">
+              <div class="group ml-[20px] max-sm:ml-0 max-sm:mb-[24px]">
+                <div class="form-check max-sm:text-center max-sm:!mb-[12px]">
+                  <input name="user_session[remember_me]" type="hidden" value="false" />
+
+                  <input type="checkbox" class="form-check-input" id="rememberInput" name="user_session[remember_me]" value="1" checked="true" aria_describedby="rememberInput" />
+
+                  <label for="rememberInput" class="form-check-label">
+                    Remember me on this computer
+                  </label>
+
+                  <div class="invalid-feedback rememberInput"></div>
+                </div>
+
+                <div class="fw-forget-section max-sm:text-center max-sm:!mt-[12px]">
+                  <a href="#" id="forgetPassLink">Forgot your password?</a>
+                </div>
+              </div>
+              <div class="group">
+                <button type="submit" class="ml-[20px] max-sm:ml-0 btn fw-primary-button btn-block w-fit login-button rounded-full uppercase px-[40px] py-[18px] !bg-fade-red hover:!bg-brand-red" data-recaptcha-enterprise="">
+                  Login
+                </button>
+              </div>
+            </div>
+          </form>
+          <script>
+          	var login_form_html = `{% snippet login_form %}`;
+            var forminputid = jQuery(login_form_html).find('[name="authenticity_token"]').attr('value');
+            console.log(forminputid);
+            var targetinputid = jQuery('#new_user_session').find('[name="authenticity_token"]').attr('value',forminputid);
+            console.log(targetinputid);
+          </script>
+          {% if portal.has_alternate_login %}
+            <div class="fw-or">
+              <div><span>{{ 'portal_translations.login.login_options' | t }}</span></div>
+              <hr />
+            </div>
+            <div class="fw-social-media-login row">
+              <div class="col-md-12 d-flex flex-column flex-sm-row mx-auto">            
+                {% snippet social_login %}
+              </div>
+            </div>
+          {% endif %}
+          <div class="text-center fw-forget-section d-none"><a href="#" id="forgetPassLink">{{ 'portal_translations.login.forgot' | t }}</a></div>
+        </div>
+        {% comment %}
+        {% snippet agent_login %}
+        {% endcomment %}
+        {% snippet customer_login %}
+      </div>
+ 	</div>
+  	<div class="row fw-loginform-wrapper justify-content-center align-items-center w-1/2 max-[1100px]:w-full mx-0 py-0 d-none" id="forgetPassForm">
+      <div class="w-full fw-form-section px-0">
+        <div class="form shadow-none bg-none bg-transparent py-0 px-0 pl-[10px]">
+          <form novalidate="novalidate" id="password_reset" class="max-sm:flex max-sm:flex-col" action="/password_resets" accept-charset="UTF-8" method="post">
+            <input name="utf8" type="hidden" value="✓" /><input type="hidden" name="authenticity_token" value="NkAhBj9n2hWJMHC5/PzlTnvgfXlrSiBdLeV2Q5GTBJMRnZUA4ZUpsqJxABrclaRO3YALCHwOOwTsR/4yXUbF1A==" />
+            <h1 class="uppercase font-nunito !text-[18px] font-bold text-black !mb-[30px] max-sm:text-center">Forgot password</h1>
+            <p class="max-sm:text-center">Give us your email address and instructions to reset your password will be emailed to you.</p>
+            <div class="form-group flex px-[12px] py-[10px] rounded-full border-line-gray border-2 border-solid focus-within:border-brand-red transition ease-in-out duration-300 group mb-[20px] bg-white max-sm:w-[95%] max-sm:mx-auto">
+              <label for="email" class="form-label  m-0">
+                <!-- Your e-mail address -->
+                <div class="w-[30px] h-[30px] rounded-full flex bg-brand-gray items-center justify-center group-focus-within:bg-brand-red transition ease-in-out duration-300">
+                  <img src="https://i.imgur.com/4gHzTjy.png" class="w-[16px] object-contain " alt="">
+                </div>
+                <!-- <span class="fw-asterisk">*</span> -->
+              </label>
+
+              <input type="email" class="form-control border-none bg-none bg-transparent py-0 pr-0 focus:border-none focus:shadow-none rounded-full" id="email" placeholder="Your e-mail address" name="email" required="" />
+
+              <div class="invalid-feedback email"></div>
+            </div>
+
+            <button type="submit" class="mr-[8px] btn fw-primary-button btn-block password-forgot-button w-fit login-button rounded-full uppercase px-[40px] py-[18px] !bg-fade-red hover:!bg-brand-red max-sm:w-[95%] max-sm:mx-auto max-sm:mb-[20px]">
+              Reset my password
+            </button>
+            <button type="button" class="btn fw-secondary-button btn-block w-fit login-button rounded-full uppercase px-[40px] py-[18px] max-sm:w-[95%] max-sm:mx-auto" id="loginFormLink">
+              Cancel
+            </button>
+          </form>
+          <script>
+          	var forgot_form_html = `{% snippet forgot_password_form %}`;
+            var forgotformforminputid = jQuery(forgot_form_html).find('[name="authenticity_token"]').attr('value');
+            console.log('forgotform-authenticity' + forgotformforminputid);
+            var forgotformtargetinputid = jQuery('#password_reset').find('[name="authenticity_token"]').attr('value',forgotformforminputid);
+            console.log('forgotform-authenticity confirm again' + forgotformforminputid);
+          </script>
+          {% if portal.has_alternate_login %}
+            <div class="fw-or">
+              <div><span>{{ 'portal_translations.login.login_options' | t }}</span></div>
+              <hr />
+            </div>
+            <div class="fw-social-media-login row">
+              <div class="col-md-12 d-flex flex-column flex-sm-row mx-auto">            
+                {% snippet social_login %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+  	</div>
+  	{% comment %}
+    <div class="row fw-loginform-wrapper justify-content-center d-none" id="forgetPassForm">
+      <div class="col-lg-6 fw-form-section">
+        <div class="form">
+          {% snippet forgot_password_form %}
+          {% if portal.has_alternate_login %}
+            <div class="fw-or">
+              <div><span>{{ 'portal_translations.login.login_options' | t }}</span></div>
+              <hr />
+            </div>
+            <div class="fw-social-media-login row">
+              <div class="col-md-12 d-flex flex-column flex-sm-row mx-auto">            
+                {% snippet social_login %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+  	</div>
+   {% endcomment %}
+</section>
+<div class="max-sm:flex max-sm:my-[24px] max-sm:relative max-sm:mx-auto max-sm:items-center">
+  <!-- Logo bottom 1 -->
+  <a href="#">
+    <img src="https://imgur.com/5rjxWwb.png" class="absolute max-sm:relative max-sm:w-[150px] bottom-[54px] max-sm:bottom-0 max-sm:pr-[24px] right-[192px] max-sm:right-0 max-sm:relative hover:scale-[115%] transition ease-in duration-300" alt="">
+  </a>
+  <!-- Logo bottom 2 -->
+  <a href="#">
+    <img src="https://imgur.com/flHUR6p.png" class="absolute max-sm:relative max-sm:w-[70px] max-sm:relative bottom-[46px] max-sm:bottom-0 right-[60px] max-sm:right-0 max-sm:relative hover:scale-[115%] transition ease-in duration-300" alt="">
+  </a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  jQuery(function(){
+    setTimeout(function(){
+      jQuery('.fw-social-media-login a').each(function(){
+          var originalString = jQuery(this).text();
+          originalString = originalString.replace('Continue with','');
+          jQuery(this).text(originalString);
+          jQuery(this).addClass('is-active');
+      });
+    },200);
+  });
+</script>
+{% comment %}
+<section class="container">
+  <div class="row fw-loginform-wrapper justify-content-center align-items-center" id="loginForm">
+    <div class="col-lg-6 fw-form-section">
+      {{ page_message }}
+      {% snippet login_error_messages %}
+      <div class="form">
+        {% snippet login_form %}
+        {% if portal.has_alternate_login %}
+          <div class="fw-or">
+            <div><span>{{ 'portal_translations.login.login_options' | t }}</span></div>
+            <hr />
+          </div>
+          <div class="fw-social-media-login row">
+            <div class="col-md-12 d-flex flex-column flex-sm-row mx-auto">            
+              {% snippet social_login %}
+            </div>
+          </div>
+        {% endif %}
+          <div class="text-center fw-forget-section"><a href="#" id="forgetPassLink">{{ 'portal_translations.login.forgot' | t }}</a></div>
+      </div>
+      {% snippet agent_login %}
+      {% snippet customer_login %}
+    </div>
+  </div>
+    <div class="row fw-loginform-wrapper justify-content-center d-none" id="forgetPassForm">
+    <div class="col-lg-6 fw-form-section">
+      <div class="form">
+        {% snippet forgot_password_form %}
+        {% if portal.has_alternate_login %}
+          <div class="fw-or">
+            <div><span>{{ 'portal_translations.login.login_options' | t }}</span></div>
+            <hr />
+          </div>
+          <div class="fw-social-media-login row">
+            <div class="col-md-12 d-flex flex-column flex-sm-row mx-auto">            
+              {% snippet social_login %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  jQuery(function(){
+    setTimeout(function(){
+      jQuery('.fw-social-media-login a').each(function(){
+          var originalString = jQuery(this).text();
+          originalString = originalString.replace('Continue with','');
+          jQuery(this).text(originalString);
+          jQuery(this).addClass('is-active');
+      });
+    },200);
+  });
+</script>
+{% endcomment %}

@@ -1,0 +1,34 @@
+{% if portal.current_page == "user_login" %}
+    <style>
+      body{
+        overflow: hidden !important;
+      }
+    </style>
+    <div class="login-wrapper bg-login-background flex flex-col min-h-[100vh] break-words overflow-hidden max-sm:!overflow-auto">
+{% endif %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% if portal.user.name == "" or portal.user.name == nil %}
+    {% unless portal.current_page == "user_login" %}
+        <script>
+            if(!window.location.href.indexOf("/support/login") > -1){
+                window.location.replace("/support/login");
+            }
+        </script>
+    {% endunless %}
+{% endif %}
+{% unless portal.current_page == "user_login" %}
+    {% unless portal.user.name == "" or portal.user.name == nil %}
+        {{header}}
+    {% endunless %}
+{% endunless %}
+<main class="fw-main-wrapper {% if portal.current_page == "user_login" %} page-login max-sm:!flex max-sm:!flex-col {% endif %}" id="fw-main-content">
+    {{ content_for_layout }}
+</main>
+{% unless portal.current_page == "user_login" %}
+    {% unless portal.user.name == "" or portal.user.name == nil %}
+        {{footer}}
+    {% endunless %}
+{% endunless %}
+{% if portal.current_page == "user_login" %}
+    </div>
+{% endif %}
